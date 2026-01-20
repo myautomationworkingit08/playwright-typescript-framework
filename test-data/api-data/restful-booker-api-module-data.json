@@ -1,0 +1,35 @@
+{
+    "content_type": "application/json; charset=utf-8",
+    "booking_id": "501",
+    "first_name": "John",
+    "create_booking": {
+        "firstname": "Sara",
+        "lastname": "Holland",
+        "totalprice": 111,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "update_booking": {
+        "firstname": "Mike",
+        "lastname": "Thompson",
+        "totalprice": 500,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    },
+    "create_token": {
+        "username": "admin",
+        "password": "password123"
+    },
+    "partial_update_booking": {
+        "firstname": "Shaon",
+        "lastname": "Das"
+    }
+}

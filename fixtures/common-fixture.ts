@@ -1,4 +1,5 @@
-import {test as baseTest} from '../fixtures/pom-fixture';
+import { test as baseTest } from '../fixtures/pom-fixture';
+import CommonApiUtils from '../utils/CommonApiUtils';
 import { CommonUtils } from '../utils/CommonUtils';
 import { AppFixtures } from './app-fixtures';
 
@@ -7,7 +8,10 @@ import { AppFixtures } from './app-fixtures';
 // }
 
 export const test = baseTest.extend<AppFixtures>({
-    commonUtilsFixture: async({}, use)=>{
+    commonUtilsFixture: async ({ }, use) => {
         await use(new CommonUtils());
+    },
+    commonApiUtilsFixture: async ({ request }, use) => {
+        await use(new CommonApiUtils(request));
     }
 });

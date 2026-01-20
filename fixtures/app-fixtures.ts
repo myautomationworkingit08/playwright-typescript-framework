@@ -4,6 +4,7 @@ import { CommonUtils } from "../utils/CommonUtils";
 import { UsersPage } from "../pages/UsersPage";
 import { LeftNavigationPage } from "../pages/LeftNavigationPage";
 import { PimPage } from "../pages/PimPage";
+import CommonAPiUtils from "../utils/CommonApiUtils";
 
 
 export type AppFixtures = {
@@ -15,4 +16,5 @@ export type AppFixtures = {
     logoutFixture: void;
     leftNavPageFixture: LeftNavigationPage;
     pimPageFixture: PimPage;
+    commonApiUtilsFixture: CommonAPiUtils;
 };
