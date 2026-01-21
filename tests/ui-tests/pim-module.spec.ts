@@ -2,7 +2,7 @@ import {expect, test} from "../../fixtures/hooks-fixture";
 import pimModuleData from "../../test-data/ui-data/pim-module-data.json";
 
 test("[PIM] Verify a new Employee is successfully created under PIM Module", {
-    tag: ['@UI', '@DEMO'],
+    tag: ['@UI', '@DEMO', '@PIM'],
     annotation:{
         type: 'Test case Link',
         description: 'https://www.google.com'

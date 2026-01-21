@@ -41,8 +41,8 @@ test.describe("Invalid Login Tests", {
     }) => {
         const decryptedPassword = commonUtilsFixture.decryptData(process.env.PASSWORD!);
         await loginPageFixture.loginToOrangeHrm(loginModuleData.wrong_username, decryptedPassword);
-        // await expect(loginPageFixture.invalidCredentialsErrorPopUp).toHaveText(loginModuleData.invalid_credential_error_msg);
-        await expect(loginPageFixture.invalidCredentialsErrorPopUp).toHaveText('bdudiyi');
+        await expect(loginPageFixture.invalidCredentialsErrorPopUp).toHaveText(loginModuleData.invalid_credential_error_msg);
+        // await expect(loginPageFixture.invalidCredentialsErrorPopUp).toHaveText('bdudiyi');
         await expect(loginPageFixture.userNameInput).toBeVisible();
     })
 })
