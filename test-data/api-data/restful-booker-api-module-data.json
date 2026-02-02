@@ -13,6 +13,17 @@
         },
         "additionalneeds": "Breakfast"
     },
+    "create_booking_hook": {
+        "firstname": "Kevin",
+        "lastname": "Pieterson",
+        "totalprice": 345,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+    },
     "update_booking": {
         "firstname": "Mike",
         "lastname": "Thompson",

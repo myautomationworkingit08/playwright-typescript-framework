@@ -17,4 +17,5 @@ export type AppFixtures = {
     leftNavPageFixture: LeftNavigationPage;
     pimPageFixture: PimPage;
     commonApiUtilsFixture: CommonAPiUtils;
+    createBookingFixture: number;
 };

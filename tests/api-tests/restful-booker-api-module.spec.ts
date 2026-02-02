@@ -3,19 +3,6 @@ import { expect, test } from "../../fixtures/hooks-fixture";
 import apiPathData from "../../test-data/api-data/api-path-data.json"
 import restfulBookerData from "../../test-data/api-data/restful-booker-api-module-data.json"
 
-// test("API Testing", async ({
-//     request
-// }) => {
-//     const bookingIds = await request.get('booking');
-//     console.log(await bookingIds.json());
-// })
-
-// test("API Testing 2", async ({
-//     request
-// }) => {
-//     const bookingDetails = await request.get('booking/1423');
-//     console.log(await bookingDetails.json());
-// })
 
 test("[Restful-Booker>Booking] Verify user is able to get all the booking Ids using GET API and receive valid response", {
     tag: ['@UAT', '@API'],
@@ -73,9 +60,9 @@ test("[Restful-Booker>Booking] Verify user is able to Update existing booking us
         type: "Test Case Link",
         description: "https://www.google.com"
     }
-}, async ({ request, commonApiUtilsFixture }) => {
+}, async ({ request, commonApiUtilsFixture, createBookingFixture }) => {
     const apiToken = await commonApiUtilsFixture.createToken();
-    const updateBookingResp = await request.put(`${apiPathData.booking_path}/${restfulBookerData.booking_id}`, {
+    const updateBookingResp = await request.put(`${apiPathData.booking_path}/${createBookingFixture}`, {
         headers: {
             Cookie: `token=${apiToken}`
         },
@@ -94,9 +81,9 @@ test("[Restful-Booker>Booking] Verify user is able to partially update existing 
         type: "Test Case Link",
         description: "https://www.google.com"
     }
-}, async ({ request, commonApiUtilsFixture }) => {
+}, async ({ request, commonApiUtilsFixture, createBookingFixture }) => {
     const apiToken = await commonApiUtilsFixture.createToken();
-    const partUpdateBookingResp = await request.patch(`${apiPathData.booking_path}/${restfulBookerData.booking_id}`, {
+    const partUpdateBookingResp = await request.patch(`${apiPathData.booking_path}/${createBookingFixture}`, {
         headers: {
             Cookie: `token=${apiToken}`
         },
@@ -116,9 +103,9 @@ test("[Restful-Booker>Booking] Verify user is able to delete existing booking us
         type: "Test Case Link",
         description: "https://www.google.com"
     }
-}, async ({ request, commonApiUtilsFixture }) => {
+}, async ({ request, commonApiUtilsFixture, createBookingFixture }) => {
     const apiToken = await commonApiUtilsFixture.createToken();
-    const deleteBookingResp = await request.delete(`${apiPathData.booking_path}/${restfulBookerData.booking_id}`, {
+    const deleteBookingResp = await request.delete(`${apiPathData.booking_path}/${createBookingFixture}`, {
         headers: {
             Cookie: `token=${apiToken}`
         }
@@ -126,7 +113,7 @@ test("[Restful-Booker>Booking] Verify user is able to delete existing booking us
     expect(deleteBookingResp.status()).toBe(201);
     expect(deleteBookingResp.statusText()).toBe('Created');
 
-    const getBookingResp = await request.get(`${apiPathData.booking_path}/${restfulBookerData.booking_id}`);
+    const getBookingResp = await request.get(`${apiPathData.booking_path}/${createBookingFixture}`);
     expect(getBookingResp.status()).toBe(404);
     expect(getBookingResp.statusText()).toBe('Not Found');
 })
