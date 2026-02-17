@@ -117,3 +117,4 @@ test("[Restful-Booker>Booking] Verify user is able to delete existing booking us
     expect(getBookingResp.status()).toBe(404);
     expect(getBookingResp.statusText()).toBe('Not Found');
 })
+
