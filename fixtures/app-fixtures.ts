@@ -18,4 +18,5 @@ export type AppFixtures = {
     pimPageFixture: PimPage;
     commonApiUtilsFixture: CommonAPiUtils;
     createBookingFixture: number;
+    cleanUpBookingFixture: void;
 };

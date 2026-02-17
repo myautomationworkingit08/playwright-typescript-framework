@@ -27,8 +27,8 @@ test("[Restful-Booker>Booking] Verify user is able to fetch booking details for 
         type: "Test Case Link",
         description: "https://www.google.com"
     }
-}, async ({ request }) => {
-    const bookingResp = await request.get(`${apiPathData.booking_path}/${restfulBookerData.booking_id}`);
+}, async ({ request, createBookingFixture, cleanUpBookingFixture }) => {
+    const bookingResp = await request.get(`${apiPathData.booking_path}/1130`);
     const bookingJsonResp = await bookingResp.json();
     console.log(bookingJsonResp);
     expect(bookingResp.status()).toBe(200);
@@ -60,7 +60,7 @@ test("[Restful-Booker>Booking] Verify user is able to Update existing booking us
         type: "Test Case Link",
         description: "https://www.google.com"
     }
-}, async ({ request, commonApiUtilsFixture, createBookingFixture }) => {
+}, async ({ request, commonApiUtilsFixture, createBookingFixture, cleanUpBookingFixture }) => {
     const apiToken = await commonApiUtilsFixture.createToken();
     const updateBookingResp = await request.put(`${apiPathData.booking_path}/${createBookingFixture}`, {
         headers: {
@@ -81,7 +81,7 @@ test("[Restful-Booker>Booking] Verify user is able to partially update existing 
         type: "Test Case Link",
         description: "https://www.google.com"
     }
-}, async ({ request, commonApiUtilsFixture, createBookingFixture }) => {
+}, async ({ request, commonApiUtilsFixture, createBookingFixture, cleanUpBookingFixture }) => {
     const apiToken = await commonApiUtilsFixture.createToken();
     const partUpdateBookingResp = await request.patch(`${apiPathData.booking_path}/${createBookingFixture}`, {
         headers: {
